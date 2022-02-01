@@ -20,20 +20,7 @@ class CategoryType extends AbstractType
                     'placeholder' => 'Ecrire ici le nom...'
                 ]
             ])
-            ->add('description',TextType::class,[
-                'label' => 'Description de la catégorie',
-                'required' => false,
-                'attr' => [
-                    'placeholder' => 'Ecrire ici la description'
-                ]
-            ])
-            ->add('image',TextType::class,[
-                'label' => 'Image de la catégorie',
-                'required' => false,
-                'attr' => [
-                    'placeholder' => 'Ajouter le chemin de l\'image ici'
-                ]
-            ])
+            
         ;
     }
 
