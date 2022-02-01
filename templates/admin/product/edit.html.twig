@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Edit Product{% endblock %}
+
+{% block body %}
+    <h1>Modifier un plat</h1>
+
+    {{ include('admin/product/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a href="{{ path('admin_product_index') }}">Retour à la liste</a>
+
+    {{ include('admin/product/_delete_form.html.twig') }}
+{% endblock %}
