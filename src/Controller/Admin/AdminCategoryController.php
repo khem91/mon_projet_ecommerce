@@ -36,15 +36,22 @@ class AdminCategoryController extends AbstractController
             return $this->redirectToRoute('admin_category_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('admin/category/new.html.twig', [
+        return $this->render('admin/category/new.html.twig', [
             'category' => $category,
-            'form' => $form,
+            'form' => $form->createView(),
         ]);
     }
 
     #[Route('/{id}', name: 'admin_category_show', methods: ['GET'])]
-    public function show(Category $category): Response
+    public function show(int $id, CategoryRepository $categoryRepository): Response
     {
+        $category = $categoryRepository->find($id);
+
+        if(!$category)
+        {
+            $this->addFlash("danger","La catégorie est introuvable");
+            return $this->redirectToRoute("admin_category_index");
+        }
         return $this->render('admin/category/show.html.twig', [
             'category' => $category,
         ]);

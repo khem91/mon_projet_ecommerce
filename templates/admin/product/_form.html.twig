@@ -1,4 +1,29 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+        {{ form_row(form.name) }}
+    </div>
+
+    <div class="col-sm-12 col-md-6">
+        {{ form_row(form.description) }}
+    </div
+
+    <div class="col-sm-12 col-md-6">
+        {{ form_row(form.price) }}
+    </div>
+
+    <div class="col-sm-12">
+    {{ form_row(form.image) }}
+    </div>
+
+    <div class="col-sm-12">
+    {{ form_row(form.category) }}
+    </div>
+    
+</div>
+
+    
+
     <button class="btn btn-dark mt-3">{{ button_label|default('Enregister') }}</button>
 {{ form_end(form) }}

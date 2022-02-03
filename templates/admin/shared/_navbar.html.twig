@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light imageNav">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ path('admin_home') }}">Administration</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,16 +8,20 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="{{ path('home') }}">Page d'accueil</a>
+          <a class="nav-link " aria-current="page" href="{{ path('home') }}">Accueil</a>
         </li>        
 
 
         <li class="nav-item"> 
-          <a class="nav-link " aria-current="page" href="{{ path('admin_category_index') }}">Mes catégories</a>
+          <a class="nav-link " aria-current="page" href="{{ path('admin_category_index') }}">Catégorie</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="{{ path('admin_product_index') }}">Mes plats</a>
+          <a class="nav-link " aria-current="page" href="{{ path('admin_product_index') }}">Plats</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{{ path('admin_user_list') }}">Utilisateurs</a>
         </li>
 
        

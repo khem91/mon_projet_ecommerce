@@ -3,39 +3,44 @@
 {% block title %}Product index{% endblock %}
 
 {% block body %}
-    <h1>Mes plats</h1>
+  <div class="container py-5">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Image</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="row">
+    
+
+        {% include "_messages_flash.html.twig" %}
+    
+        <div class="col-12 d-flex align-items-center justify-content-between">
+            <h3>Liste des plats</h3>
+            <a class="btn btn-dark" href="{{ path('admin_product_new') }}">Ajouter</a>
+        </div>
+
+        <div class="navigation">
+            {{ knp_pagination_render(products) }} 
+        </div>
+
         {% for product in products %}
-            <tr>
-                <td>{{ product.id }}</td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.description }}</td>
-                <td>{{ product.price }}</td>
-                <td>{{ product.image }}</td>
-                <td>
-                    <a href="{{ path('admin_product_show', {'id': product.id}) }}">Voir</a>
-                    <a href="{{ path('admin_product_edit', {'id': product.id}) }}">Modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">Pas encore de plat</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('admin_product_new') }}">Créer un nouveau</a>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+
+                <div class="card mt-5">
+                    <img src="{{ product.image}}" class="card-img-top imageCard" alt="image_produit">
+                    <div class="card-body ">
+                        <h5 class="card-title ">{{ product.name | upper }}</h5>
+                        <p class="mb-1">{{ product.category.name }}</p>
+                        <p>{{ product.price | priceEuro }}</p>
+                        <a href="{{ path('admin_product_edit',{ 'id' : product.id } ) }}" class="btn btn-dark w-100">Gérer</a>
+                </div>
+                </div> 
+        
+            </div> 
+             
+        {% endfor %}
+        <div class="navigation mt-3">
+            {{ knp_pagination_render(products) }}
+        </div>
+
+    </div>
+
+  </div>
 {% endblock %}
