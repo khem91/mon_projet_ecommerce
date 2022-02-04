@@ -70,6 +70,8 @@ class ProfileController extends AbstractController
         ]);
     }
 
+
+
     #[Route('/profile/purchase/list', name: 'profile_purchase_list')]
     public function purchaselist()
     {
