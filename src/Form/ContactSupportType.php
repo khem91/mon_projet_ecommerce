@@ -2,33 +2,30 @@
 
 namespace App\Form;
 
-use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
-class CategoryType extends AbstractType
+class ContactSupportType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name',TextType::class,[
-                'label' => 'Nom de la catégorie',
-                'required' => false,
-                'attr' => [
-                    'placeholder' => 'Ecrire ici le nom...'
-                ]
+            ->add('subjectMessage',TextType::class,[
+                'label' => 'Sujet'
             ])
-            
+            ->add('contentMessage',TextareaType::class,[
+                'label' => 'Message'
+            ])
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Category::class,
+            // Configure your form options here
         ]);
     }
 }
- 

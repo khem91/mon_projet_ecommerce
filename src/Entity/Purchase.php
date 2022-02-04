@@ -21,14 +21,14 @@ class Purchase
     private $user;
 
     #[ORM\Column(type: 'datetime')]
-    private $createdAt;
+    private $createdAt; 
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank(message : 'Vous devez renseigner le pays.')]
     private $country;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\NotBlank(message : 'Vous devez renseigner la ville.')]
+    #[Assert\NotBlank(message : 'Vous devez renseigner la ville.')] 
     private $city;
 
     #[ORM\Column(type: 'string', length: 255)]

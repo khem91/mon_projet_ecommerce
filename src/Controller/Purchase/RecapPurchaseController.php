@@ -50,7 +50,6 @@ class RecapPurchaseController extends AbstractController
 
             $em->flush();
             
-           
             return $this->redirectToRoute("boutique_stripe_session");
         }
 
