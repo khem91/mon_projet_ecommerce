@@ -27,7 +27,7 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Votre prénom',
                 'required' => false
             ])
-            ->add('phone_number',TextType::class,[
+            ->add('phone_number',TextType::class,[ 
                 'label' => 'Votre numéro téléphone',
                 'required' => false
             ])
